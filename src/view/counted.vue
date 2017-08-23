@@ -1,6 +1,6 @@
 <template>
   <div>{{name}}</div>
-  <div v-text="shen"></div>
+  <div>你好！</div>
 </template>
 <script>
   export default {
