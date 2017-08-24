@@ -6,7 +6,7 @@
         name: 'Header',
         data () {
             return {
-                name:'张三'
+                name:'张三,李四,王五'
             };
         }
     };
