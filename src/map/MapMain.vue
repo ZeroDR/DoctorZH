@@ -27,7 +27,7 @@
         zoom: 10,
         style: 'mapbox://styles/mapbox/streets-v9'
       });
-      this.$store.commit('setMap', map);
+      this.$store.commit('setBox', map);
     },
     methods: {
     }
