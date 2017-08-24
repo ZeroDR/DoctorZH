@@ -1,5 +1,5 @@
 <template>
-  <div class='features'>
+  <div @scroll="scrollEvent($event)" class='features'>
     <section id='baker' class='active'>
       <h3>221b Baker St.</h3>
       <p>November 1895. London is shrouded in fog and Sherlock Holmes and Watson pass time restlessly awaiting a new case. "The London criminal is certainly a dull fellow," Sherlock bemoans. "There have been numerous petty thefts," Watson offers in response. Just then a telegram arrives from Sherlock's brother Mycroft with a mysterious case.</p>
@@ -47,51 +47,51 @@
         activeChapterName: 'baker',
         chapters: {
           'baker': {
-            bearing: 27,
-            center: [-0.15591514, 51.51830379],
-            zoom: 15.5,
+            bearing: 0,
+            center: [113.62, 34.75],
+            zoom: 12,
             pitch: 20
           },
           'aldgate': {
             duration: 6000,
-            center: [-0.07571203, 51.51424049],
+            center: [113.63, 34.75],
             bearing: 150,
             zoom: 15,
             pitch: 0
           },
           'london-bridge': {
             bearing: 90,
-            center: [-0.08533793, 51.50438536],
+            center: [113.64, 34.75],
             zoom: 13,
             speed: 0.6,
             pitch: 40
           },
           'woolwich': {
             bearing: 90,
-            center: [0.05991101, 51.48752939],
+            center: [113.65, 34.75],
             zoom: 12.3
           },
           'gloucester': {
             bearing: 45,
-            center: [-0.18335806, 51.49439521],
+            center: [113.66, 34.75],
             zoom: 15.3,
             pitch: 20,
             speed: 0.5
           },
           'caulfield-gardens': {
             bearing: 180,
-            center: [-0.19684993, 51.5033856],
+            center: [113.67, 34.75],
             zoom: 12.3
           },
           'telegraph': {
             bearing: 90,
-            center: [-0.10669358, 51.51433123],
+            center: [113.62, 34.78],
             zoom: 17.3,
             pitch: 40
           },
           'charing-cross': {
             bearing: 90,
-            center: [-0.12416858, 51.50779757],
+            center: [113.62, 34.73],
             zoom: 14.3,
             pitch: 20
           }
@@ -100,18 +100,15 @@
     },
     computed: {
       ...mapState({
-        mapState: state => state.mapStore
+        map: state => state.mapStore.boxView
       })
     },
     created(){
-      this.map = mapState.map;
     },
     mounted(){
-      window.onscroll = this.scrollEvent;
     },
     methods: {
-      scrollEvent(e){
-        console.log(e);
+      scrollEvent(event){
         let chapterNames = Object.keys(this.chapters);
         for (let i = 0; i < chapterNames.length; i++) {
           let chapterName = chapterNames[i];
@@ -122,8 +119,7 @@
         }
       }, setActiveChapter(chapterName) {
         if (chapterName === this.activeChapterName) return;
-
-        this.map.flyTo(chapters[chapterName]);
+        this.map.flyTo(this.chapters[chapterName]);
 
         document.getElementById(chapterName).setAttribute('class', 'active');
         document.getElementById(this.activeChapterName).setAttribute('class', '');

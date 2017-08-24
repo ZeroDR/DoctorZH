@@ -19,13 +19,10 @@
     },
     computed: {
       ...mapState({
-        map: state => state.mapStore.map,
         count:state => state.mapStore.count
       })
     },
     mounted(){
-      console.log(this.count);
-      console.log(this.map);
     },
     methods: {},
     components: {MapMain,MapActive}
