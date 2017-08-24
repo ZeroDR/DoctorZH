@@ -3,9 +3,11 @@
 </template>
 <script>
     export default {
-        name: 'hello',
+        name: 'Header',
         data () {
-            return {};
+            return {
+
+            };
         }
     };
 </script>
