@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import contend from '@/view/contend'
+import IndexMain from '@/view/index'
 
 Vue.use(Router);
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Contend',
-      component: contend
+      name: 'IndexMain',
+      component: IndexMain
     }
   ]
 })

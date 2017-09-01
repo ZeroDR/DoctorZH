@@ -19,13 +19,13 @@
     },
     computed: {
       ...mapState({
-        count:state => state.mapStore.count
+        count: state => state.mapStore.count
       })
     },
     mounted(){
     },
     methods: {},
-    components: {MapMain,MapActive}
+    components: {MapMain, MapActive}
   };
 </script>
 <style scoped>
