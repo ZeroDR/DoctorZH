@@ -6,16 +6,14 @@
       </Col>
     </Row>
     <Row :className="contentName">
-      <Col className="col-panel" span="18" push="6">
+      <Col className="col-panel">
       <content-view></content-view>
-      </Col>
-      <Col className="col-panel" span="6" pull="18">
-      <left-view></left-view>
       </Col>
     </Row>
     <Row :className="footName">
       <Col><footer-panel></footer-panel></Col>
     </Row>
+    <BackTop></BackTop>
   </div>
 </template>
 <script>
@@ -38,7 +36,7 @@
 </script>
 <style scoped>
   .main-panel {
-    height: 200%;
+    height: auto;
     width: 100%;
     margin: 0;
     padding: 0;

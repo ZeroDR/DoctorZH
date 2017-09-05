@@ -30,13 +30,14 @@
       this.$store.commit('setBox', map);
     },
     methods: {
-    }
+    },
+    components:{}
   };
 </script>
 <style scoped>
   #map {
     width: 100%;
-    height: 100%;
+    height: 500px;
     margin: 0;
     padding: 0;
     overflow: hidden;
