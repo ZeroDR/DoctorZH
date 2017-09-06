@@ -1,5 +1,5 @@
 <template>
-  <div id="map">
+  <div :id="mapConfig.id" class="map-panel">
   </div>
 </template>
 <script>
@@ -11,6 +11,7 @@
     data () {
       return {};
     },
+    props:['mapConfig'],
     computed: {
       ...mapState({
         count: state => state.mapStore.count
@@ -22,12 +23,14 @@
       let mapBox = require('mapbox-gl/dist/mapbox-gl.js');
       mapBox.accessToken = 'pk.eyJ1IjoiemVyby1kciIsImEiOiJjajZvaG54bWcwamEwMndvMWJma3ZyaXViIn0.f4-UmzEOMhLdbB_K9-cpqA';
       let map = new mapBox.Map({
-        container: 'map',
-        center: [113.62, 34.75],
-        zoom: 10,
+        container: this.mapConfig.id,
+        center: this.mapConfig.center,
+        zoom: this.mapConfig.zoom,
         style: 'mapbox://styles/mapbox/streets-v9'
       });
-      this.$store.commit('setBox', map);
+      if(this.mapConfig.id === 'travelMap') {
+        this.$store.commit('setBox', map);
+      }
     },
     methods: {
     },
@@ -35,7 +38,7 @@
   };
 </script>
 <style scoped>
-  #map {
+  .map-panel {
     width: 100%;
     height: 500px;
     margin: 0;
