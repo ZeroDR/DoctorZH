@@ -40,18 +40,18 @@
   }
 
   .img-panel1{
-    background-image: url("/static/imgs/1.png");
+    background-image: url("../../static/imgs/1.png");
   }
 
   .img-panel2{
-    background-image: url("/static/imgs/2.png");
+    background-image: url("../../static/imgs/2.png");
   }
 
   .img-panel3{
-    background-image: url("/static/imgs/3.png");
+    background-image: url("../../static/imgs/3.png");
   }
 
   .img-panel4{
-    background-image: url("/static/imgs/4.png");
+    background-image: url("../../static/imgs/4.png");
   }
 </style>

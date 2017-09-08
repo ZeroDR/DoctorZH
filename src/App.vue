@@ -16,6 +16,6 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background: url('/static/imgs/bg.jpg') no-repeat;
+    background: url('../static/imgs/bg.jpg') no-repeat;
   }
 </style>
