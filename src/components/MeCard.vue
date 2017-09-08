@@ -36,7 +36,7 @@
     width:200px;
     height:200px;
     margin:20px 10px;
-    background: url('/static/imgs/timg.jpg') no-repeat center;
+    background: url('../../static/imgs/timg.jpg') no-repeat center;
     float:left;
     border-radius: 50%;
   }

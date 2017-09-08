@@ -5,6 +5,7 @@
 <script>
   import {mapState} from 'vuex'
   import {mapMutations} from 'vuex'
+  import mapBox from 'mapbox-gl'
 
   export default {
     name: 'MapMain',
@@ -20,7 +21,6 @@
     created(){
     },
     mounted(){
-      let mapBox = require('mapbox-gl/dist/mapbox-gl.js');
       mapBox.accessToken = 'pk.eyJ1IjoiemVyby1kciIsImEiOiJjajZvaG54bWcwamEwMndvMWJma3ZyaXViIn0.f4-UmzEOMhLdbB_K9-cpqA';
       let map = new mapBox.Map({
         container: this.mapConfig.id,
